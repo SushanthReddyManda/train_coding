@@ -400,12 +400,9 @@ BlocklyDialogs.congratulations = function() {
       code = prettyPrintOne(code, 'js');
       pre.innerHTML = code;
     }
-    if (lineCount == 1) {
-      var text = BlocklyGames.getMsg('Games_linesOfCode1');
-    } else {
-      var text = BlocklyGames.getMsg('Games_linesOfCode2')
-          .replace('%1', String(lineCount));
-    }
+    lineCount = BlocklyInterface.workspace.getAllBlocks().length;
+    var tempText = "You solved this level with %1 blocks.";
+    var text = tempText.replace('%1', String(lineCount));
     linesText.appendChild(document.createTextNode(text));
   }
 
