@@ -29,7 +29,16 @@ if (goog.DEBUG) {
 
 
 Maze.soy.toolbox = function(opt_data, opt_ignored, opt_ijData) {
-  return '<xml id="toolbox" xmlns="https://developers.google.com/blockly/xml"><block type="maze_moveForward"></block><block type="maze_turn"><field name="DIR">turnLeft</field></block><block type="maze_turn"><field name="DIR">turnRight</field></block>' + ((opt_ijData.level > 2) ? '<block type="maze_forever"></block>' + ((opt_ijData.level == 6) ? '<block type="maze_if"><field name="DIR">isPathLeft</field></block>' : (opt_ijData.level > 6) ? '<block type="maze_if"></block>' + ((opt_ijData.level > 8) ? '<block type="maze_ifElse"></block>' : '') : '') : '') + '</xml>';
+  return `<xml id="toolbox" xmlns="https://developers.google.com/blockly/xml">
+    <block type="maze_moveForward"></block>
+    <block type="maze_turn"><field name="DIR">turnLeft</field></block>
+    <block type="maze_turn"><field name="DIR">turnRight</field></block>
+    <block type="maze_forever"></block>
+    <block type="maze_if"><field name="DIR">isPathLeft</field></block>
+    <block type="maze_ifElse"></block>
+  </xml>`
+
+  return '<xml id="toolbox" xmlns="https://developers.google.com/blockly/xml"><block type="maze_moveForward"></block><block type="maze_turn"><field name="DIR">turnLeft</field></block><block type="maze_turn"><field name="DIR">turnRight</field></block>' + ((opt_ijData.level >= 2) ? '<block type="maze_forever"></block>' + ((opt_ijData.level >= 2) ? '<block type="maze_if"><field name="DIR">isPathLeft</field></block>' : (opt_ijData.level >= 2) ? '<block type="maze_if"></block>' + ((opt_ijData.level >= 2) ? '<block type="maze_ifElse"></block>' : '') : '') : '') + '</xml>';
 };
 if (goog.DEBUG) {
   Maze.soy.toolbox.soyTemplateName = 'Maze.soy.toolbox';
