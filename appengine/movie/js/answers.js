@@ -78,13 +78,13 @@ Movie.answer = function(f) {
     case 4:
         // Reflection
         
-      Movie.penColour('#ADD8E6');
+      Movie.penColour('#3333ff');
       Movie.rect(50, 25, 100, 50);
       Movie.penColour('');
       Movie.line(50, 0, 50, 100, 1);
       Movie.penColour('#000000');
       Movie.line(0, 50, 100, 50, 1);
-      Movie.penColour('#FFFF00');
+      Movie.penColour('#FFCC00');
       Movie.line(0, 100, 50, 50, 1);
       Movie.line(50, 50, 100, 100, 1);
       Movie.line(50, 50, 75, 0, 1);
