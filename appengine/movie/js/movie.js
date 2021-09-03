@@ -32,6 +32,7 @@ goog.require('Scrubber');
 
 
 BlocklyGames.NAME = 'movie';
+BlocklyGames.MAX_LEVEL = 4;
 
 Movie.HEIGHT = 400;
 Movie.WIDTH = 400;

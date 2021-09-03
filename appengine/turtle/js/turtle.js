@@ -31,6 +31,7 @@ goog.require('Turtle.soy');
 
 
 BlocklyGames.NAME = 'turtle';
+BlocklyGames.MAX_LEVEL = 6;
 
 Turtle.HEIGHT = 400;
 Turtle.WIDTH = 400;
