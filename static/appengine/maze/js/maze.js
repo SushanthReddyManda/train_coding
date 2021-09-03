@@ -10,7 +10,7 @@
  */
 'use strict';
 
-URL = "http://e1104749ded68c.localhost.run"
+URL = "http://localhost:8000"
 
 goog.provide('Maze');
 
