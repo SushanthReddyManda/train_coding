@@ -10,6 +10,8 @@
  */
 'use strict';
 
+URL = "http://localhost:8000"
+
 goog.provide('Turtle');
 
 goog.require('Blockly.Comment');
@@ -833,6 +835,22 @@ Turtle.checkAnswer = function() {
     }
   }
   if (Turtle.isCorrect(delta)) {
+    console.log('Code:\n' + BlocklyInterface.stripCode(BlocklyInterface.executedJsCode));
+    console.log('Map:', BlocklyGames.LEVEL);
+    // console.log('Blocks Used:', BlocklyInterface.workspace.getAllBlocks().length);
+
+    var payload = {'team': username,
+                    'level': BlocklyGames.LEVEL,
+                    'code': BlocklyInterface.stripCode(BlocklyInterface.executedJsCode)};
+
+    $.ajax({
+          type: 'POST',
+          url: URL + "/database/update2/",
+          data: JSON.stringify(payload),
+          dataType: "json",
+          success: function(resultData) { console.log("Save Complete") }
+    });
+
     BlocklyInterface.saveToLocalStorage();
     if (BlocklyGames.LEVEL < BlocklyGames.MAX_LEVEL) {
       // No congrats for last level, it is open ended.
