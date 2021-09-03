@@ -1,4 +1,4 @@
-Blockly Games' Pond is a reimplementation of Tom Poindexter's 1985 game CROBOTS.
+Technothlon Games' Pond is a reimplementation of Tom Poindexter's 1985 game CROBOTS.
 Google has (with the author's permission) updated the game to be playable by a
 new generation of programmers.
 

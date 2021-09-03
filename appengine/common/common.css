@@ -1,5 +1,22 @@
-body {
-  background-color: #fff;
+
+
+body{
+  width:560px;
+  height:400px;
+     background-color:#BFDFEC;
+    background-repeat:repeat-x;
+ background-image:url("https://i.stack.imgur.com/b7z29.png");
+  animation: movement 9s linear infinite; 
+}
+
+@keyframes movement{
+  0% {
+    background-position:0px 0px;
+  }
+  100%{
+    background-position:300px 0px;
+  }
+}
   font-family: sans-serif;
   margin-top: 0;
 }
@@ -60,7 +77,16 @@ html[dir="RTL"] .mirrorImg {
 }
 
 #languageMenu {
-  margin: 16px 0;
+  
+	color: black!important;
+	text-transform: uppercase;
+	background-color: antiquewhite;
+    margin-top: 40px;
+	padding: 3px;
+	border: 1px solid  !important;
+	border-radius: 9px;
+	display: inline-block;
+	transition: all 0.3s ease 0s;
 }
 
 xml {

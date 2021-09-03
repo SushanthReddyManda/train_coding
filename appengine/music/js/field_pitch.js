@@ -5,7 +5,7 @@
  */
 
 /**
- * @fileoverview Music pitch input field. Borrowed from Blockly Games.
+ * @fileoverview Music pitch input field. Borrowed from Technothlon Games.
  * @author fraser@google.com (Neil Fraser)
  * @author samelh@google.com (Sam El-Husseini)
  */

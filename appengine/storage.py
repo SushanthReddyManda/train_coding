@@ -1,4 +1,4 @@
-"""Blockly Games: Storage
+"""Technothlon Games: Storage
 
 Copyright 2012 Google LLC
 

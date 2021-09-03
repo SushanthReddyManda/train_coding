@@ -1,4 +1,4 @@
-"""Blockly Games: Gallery
+"""Technothlon Games: Gallery
 
 Copyright 2018 Google LLC
 

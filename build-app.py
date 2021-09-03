@@ -111,7 +111,7 @@ def getMessages(lang):
 def language(name, lang):
   global messageNames
   msgs = getMessages(lang)
-  # Write copy to Blockly Games.
+  # Write copy to Technothlon Games.
   f = open('appengine/%s/generated/%s/msg.js' % (name, lang), 'w')
   for msg in msgs:
     if msg == "'use strict';\n":
