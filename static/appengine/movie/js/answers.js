@@ -127,7 +127,7 @@ Movie.answer = function(f) {
       // Movie.circle(20, 100 - time(), 5);
       // Movie.circle(80, Math.pow((time() - 50) / 5, 2), 5);
       // break;
-      case 9:
+      case 5:
       // Collision
       Movie.penColour('#006600');
       if (time() <= 50) {

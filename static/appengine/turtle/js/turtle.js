@@ -849,7 +849,12 @@ Turtle.checkAnswer = function() {
           url: URL + "/database/update2/",
           data: JSON.stringify(payload),
           dataType: "json",
-          success: function(resultData) { console.log("Save Complete") }
+          success: function(resultData) { 
+            if(resultData.team === null){
+              window.location.href = URL;
+            }
+            console.log("Save Complete") 
+          }
     });
 
     BlocklyInterface.saveToLocalStorage();

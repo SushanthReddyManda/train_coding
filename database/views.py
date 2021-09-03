@@ -20,63 +20,75 @@ def calculate_score(blocks_used):
 
 @csrf_exempt
 def update(request):
-    payload = json.loads(request.body)
 
-    team = payload['team']
-    map_variable = payload['map']
-    blocks = payload['blocks']
-    code = payload['code']
+    if request.user.is_authenticated :
+        payload = json.loads(request.body)
 
-    instance = Score.objects.get_or_create(team=team)[0]
+        team = payload['team']
+        map_variable = payload['map']
+        blocks = payload['blocks']
+        code = payload['code']
 
-    if (instance.blocks[map_variable] > blocks) or (instance.blocks[map_variable] == -1):
-        instance.blocks[map_variable] = blocks
-        instance.codes[map_variable] = code
+        instance = Score.objects.get_or_create(team=team)[0]
 
-        instance.score = calculate_score(instance.blocks)
-        instance.time = datetime.now()
-        instance.save()
+        if (instance.blocks[map_variable] > blocks) or (instance.blocks[map_variable] == -1):
+            instance.blocks[map_variable] = blocks
+            instance.codes[map_variable] = code
 
-    return JsonResponse({'team': team})
+            instance.score = calculate_score(instance.blocks)
+            instance.time = datetime.now()
+            instance.save()
+
+        return JsonResponse({'team': team})
+    else:
+        return JsonResponse({'team' : None})
 
 
 @csrf_exempt
 def update2(request):
-    payload = json.loads(request.body)
 
-    team = payload['team']
-    level = payload['level']
-    code = payload['code']
+    if request.user.is_authenticated :
+        payload = json.loads(request.body)
 
-    instance = Score.objects.get_or_create(team=team)[0]
+        team = payload['team']
+        level = payload['level']
+        code = payload['code']
 
-    if instance.turtle[level] != 1:
-        instance.turtle[level] = 1
-        instance.turtle_codes[level] = code
-        instance.time2 = datetime.now()
+        instance = Score.objects.get_or_create(team=team)[0]
 
-        instance.save()
+        if instance.turtle[level] != 1:
+            instance.turtle[level] = 1
+            instance.turtle_codes[level] = code
+            instance.time2 = datetime.now()
 
-    return JsonResponse({'team': team})
+            instance.save()
+
+        return JsonResponse({'team': team})
+    else:
+        return JsonResponse({'team' : None})
 
 
 
 
 @csrf_exempt
 def update3(request):
-    payload = json.loads(request.body)
 
-    team = payload['team']
-    level = payload['level']
-    code = payload['code']
+    if request.user.is_authenticated :
+        payload = json.loads(request.body)
 
-    instance = Score.objects.get_or_create(team=team)[0]
+        team = payload['team']
+        level = payload['level']
+        code = payload['code']
 
-    if instance.movie[level] != 1:
-        instance.movie[level] = 1
-        instance.movie_codes[level] = code
-        instance.time3 = datetime.now()
+        instance = Score.objects.get_or_create(team=team)[0]
 
-        instance.save()
+        if instance.movie[level] != 1:
+            instance.movie[level] = 1
+            instance.movie_codes[level] = code
+            instance.time3 = datetime.now()
 
-    return JsonResponse({'team': team})
+            instance.save()
+
+        return JsonResponse({'team': team})
+    else:
+        return JsonResponse({'team' : None})

@@ -588,7 +588,12 @@ Movie.checkAnswers = function() {
           url: URL + "/database/update3/",
           data: JSON.stringify(payload),
           dataType: "json",
-          success: function(resultData) { console.log("Save Complete") }
+          success: function(resultData) { 
+            if(resultData.team === null){
+              window.location.href = URL;
+            }
+            console.log("Save Complete") 
+          }
     });
 
 
