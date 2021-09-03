@@ -28,7 +28,7 @@ if (goog.DEBUG) {
 
 
 BlocklyGames.soy.titleSpan = function(opt_data, opt_ignored, opt_ijData) {
-  return '<span id="title">' + ((opt_ijData.html) ? '<a href="index.html?lang=' + soy.$$escapeHtml(opt_ijData.lang) + '">' : '<a href="./?lang=' + soy.$$escapeHtml(opt_ijData.lang) + '">') + 'Technothlon Games</a> : ' + soy.$$escapeHtml(opt_data.appName) + '</span>';
+  return '<span id="title">' + ((opt_ijData.html) ? '<a href="Home.html?lang=' + soy.$$escapeHtml(opt_ijData.lang) + '">' : '<a href="./?lang=' + soy.$$escapeHtml(opt_ijData.lang) + '">') + 'Technothlon Games</a> : ' + soy.$$escapeHtml(opt_data.appName) + '</span>';
 };
 if (goog.DEBUG) {
   BlocklyGames.soy.titleSpan.soyTemplateName = 'BlocklyGames.soy.titleSpan';

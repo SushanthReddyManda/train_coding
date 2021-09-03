@@ -43,7 +43,7 @@ var goog = goog || {};
 
 /**
  * Reference to the global object.
- * https://www.ecma-international.org/ecma-262/9.0/index.html#sec-global-object
+ * https://www.ecma-international.org/ecma-262/9.0/Home.html#sec-global-object
  *
  * More info on this implementation here:
  * https://docs.google.com/document/d/1NAeW4Wk7I7FV0Y2tcUFvQdGMc89k2vdgSXInw8_nvCI/edit

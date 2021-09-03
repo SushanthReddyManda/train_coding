@@ -218,7 +218,7 @@ BlocklyInterface.saveToLocalStorage = function() {
  * Go to the index page.
  */
 BlocklyInterface.indexPage = function() {
-  window.location = (BlocklyGames.IS_HTML ? 'index.html' : './') +
+  window.location = (BlocklyGames.IS_HTML ? 'Home.html' : './') +
       '?lang=' + BlocklyGames.LANG;
 };
 
