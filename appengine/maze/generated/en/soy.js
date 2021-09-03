@@ -55,7 +55,7 @@ Maze.soy.toolbox = function(opt_data, opt_ignored, opt_ijData) {
     ((opt_ijData.level >= 2) ? '<block type="maze_forever"></block>' : '') +
     ((opt_ijData.level >= 2) ? '<block type="maze_if"><field name="DIR">isPathLeft</field></block>' : '') +
     ((opt_ijData.level >= 2) ? '<block type="maze_if"></block>' : '') +
-    ((opt_ijData.level >= 7) ? '<block type="maze_ifElse"></block>' : '') + '</xml>';
+    ((opt_ijData.level >= 3) ? '<block type="maze_ifElse"></block>' : '') + '</xml>';
 };
 if (goog.DEBUG) {
   Maze.soy.toolbox.soyTemplateName = 'Maze.soy.toolbox';
