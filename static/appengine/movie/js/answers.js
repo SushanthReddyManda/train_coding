@@ -101,31 +101,46 @@ Movie.answer = function(f) {
       }
 
       break;
-    case 9:
-      // Background.
-      Movie.penColour('#00ff00');
-      Movie.circle(50, time() / 2, time() / 2);
-      Movie.penColour('#ff0000');
-      if (time() < 50) {
-        Movie.circle(50, 70, 10);
+    // case 9:
+      // // Background.
+      // Movie.penColour('#00ff00');
+      // Movie.circle(50, time() / 2, time() / 2);
+      // Movie.penColour('#ff0000');
+      // if (time() < 50) {
+      //   Movie.circle(50, 70, 10);
+      // } else {
+      //   Movie.circle(50, 80, 20);
+      // }
+      // Movie.penColour('#3333ff');
+      // Movie.rect(50, 40, 20, 40);
+      // Movie.penColour('#000000');
+      // Movie.line(40, 50, 20, 100 - time(), 5);
+      // Movie.line(60, 50, 80, Math.pow((time() - 50) / 5, 2), 5);
+      // if (time() < 50) {
+      //   Movie.line(40, 20, time(), 0, 5);
+      //   Movie.line(60, 20, 100 - time(), 0, 5);
+      // } else {
+      //   Movie.line(40, 20, 100 - time(), 0, 5);
+      //   Movie.line(60, 20, time(), 0, 5);
+      // }
+      // Movie.penColour('#ff0000');
+      // Movie.circle(20, 100 - time(), 5);
+      // Movie.circle(80, Math.pow((time() - 50) / 5, 2), 5);
+      // break;
+      case 9:
+      // Collision
+      Movie.penColour('#006600');
+      if (time() <= 50) {
+        Movie.circle(time(), 50, 10);
+        Movie.circle(100-time(),50,10)
       } else {
-        Movie.circle(50, 80, 20);
+        Movie.penColour('#ff0000');
+        Movie.circle(100-time(), time(), 5);
+        Movie.circle(100-time(), 100-time(), 5);
+        Movie.circle(time(), 100-time(), 5);
+        Movie.circle(time(), time(), 5);
+
       }
-      Movie.penColour('#3333ff');
-      Movie.rect(50, 40, 20, 40);
-      Movie.penColour('#000000');
-      Movie.line(40, 50, 20, 100 - time(), 5);
-      Movie.line(60, 50, 80, Math.pow((time() - 50) / 5, 2), 5);
-      if (time() < 50) {
-        Movie.line(40, 20, time(), 0, 5);
-        Movie.line(60, 20, 100 - time(), 0, 5);
-      } else {
-        Movie.line(40, 20, 100 - time(), 0, 5);
-        Movie.line(60, 20, time(), 0, 5);
-      }
-      Movie.penColour('#ff0000');
-      Movie.circle(20, 100 - time(), 5);
-      Movie.circle(80, Math.pow((time() - 50) / 5, 2), 5);
       break;
   }
 };

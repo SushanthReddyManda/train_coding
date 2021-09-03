@@ -20,6 +20,6 @@ from django.contrib.auth.views import LoginView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/', LoginView.as_view(template_name='login.html', redirect_field_name='/static/index.html')),
     path('database/', include('database.urls')),
-] + staticfiles_urlpatterns()
+] + staticfiles_urlpatterns()+[path('', LoginView.as_view(template_name='login.html', redirect_field_name='/static/index.html')),]
+

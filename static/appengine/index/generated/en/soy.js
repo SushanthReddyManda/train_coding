@@ -12,7 +12,7 @@ goog.require('soydata');
 
 
 Index.soy.messages = function(opt_data, opt_ignored, opt_ijData) {
-  return '<div style="display: none"><span id="title">Technothlon Games</span><span id="Index_clear">Delete all your solutions?</span></div>';
+  return '<div style="display: none"><span id="title">Technothlon Games</span>';
 };
 if (goog.DEBUG) {
   Index.soy.messages.soyTemplateName = 'Index.soy.messages';

@@ -58,3 +58,25 @@ def update2(request):
         instance.save()
 
     return JsonResponse({'team': team})
+
+
+
+
+@csrf_exempt
+def update3(request):
+    payload = json.loads(request.body)
+
+    team = payload['team']
+    level = payload['level']
+    code = payload['code']
+
+    instance = Score.objects.get_or_create(team=team)[0]
+
+    if instance.movie[level] != 1:
+        instance.movie[level] = 1
+        instance.movie_codes[level] = code
+        instance.time3 = datetime.now()
+
+        instance.save()
+
+    return JsonResponse({'team': team})

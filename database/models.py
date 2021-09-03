@@ -52,5 +52,9 @@ class Score(models.Model):
     turtle_codes = CharListField(default=['']*11)
     time2 = models.DateTimeField(default=datetime.now)
 
+    movie = IntegerListField(max_length=200, default=[0]*11)
+    movie_codes = CharListField(default=['']*11)
+    time3 = models.DateTimeField(default=datetime.now)
+
     def __str__(self):
         return self.team + ': [' + ', '.join(map(str, self.blocks[1:])) + ']'

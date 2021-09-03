@@ -40,13 +40,13 @@ Turtle.answer = function() {
       // Dashed Lines
 
       Turtle.penDown(false);
-      Turtle.move(150);
+      Turtle.move(100);
       Turtle.turn(180);
-      for (var count = 0; count < 5; count++) {
+      for (var count = 0; count < 6; count++) {
         Turtle.penDown(false);
-        Turtle.move(30);
+        Turtle.move(20);
         Turtle.penDown(true);
-        Turtle.move(30);
+        Turtle.move(20);
       }
       
       

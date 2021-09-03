@@ -10,6 +10,8 @@
  */
 'use strict';
 
+URL = "http://localhost:8000"
+
 goog.provide('Movie');
 
 goog.require('Blockly.Comment');
@@ -576,6 +578,21 @@ Movie.checkAnswers = function() {
   }
   if (Movie.isCorrect() && !Movie.success) {
     Movie.success = true;
+
+    var payload = {'team': username,
+                    'level': BlocklyGames.LEVEL,
+                    'code': BlocklyInterface.stripCode(BlocklyInterface.executedJsCode)};
+
+    $.ajax({
+          type: 'POST',
+          url: URL + "/database/update3/",
+          data: JSON.stringify(payload),
+          dataType: "json",
+          success: function(resultData) { console.log("Save Complete") }
+    });
+
+
+
     BlocklyInterface.saveToLocalStorage();
     if (BlocklyGames.LEVEL < BlocklyGames.MAX_LEVEL) {
       // No congrats for last level, it is open ended.

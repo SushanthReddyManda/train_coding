@@ -20,7 +20,10 @@ if (goog.DEBUG) {
 
 
 BlocklyGames.soy.headerBar = function(opt_data, opt_ignored, opt_ijData) {
-  return '<table width="100%"><tr><td><h1>' + BlocklyGames.soy.titleSpan(opt_data, null, opt_ijData) + ((opt_ijData.level) ? BlocklyGames.soy.levelLinks({suffix: '' + ((opt_data.levelLinkSuffix) ? soy.$$escapeHtml(opt_data.levelLinkSuffix) : '')}, null, opt_ijData) : '') + '</h1></td><td id="header_cta" class="farSide">' + ((opt_data.hasLinkButton) ? '&nbsp;<button id="linkButton" title="Save and link to blocks."><img src="common/1x1.gif" class="link icon21"></button>' : '') + ((opt_data.hasHelpButton) ? '&nbsp;<button id="helpButton">Help</button>' : '') + ((opt_data.farLeftHtml) ? '&nbsp;' + soy.$$filterNoAutoescape(opt_data.farLeftHtml) : '') + '</td></tr></table>';
+  return '<table style="margin-bottom:2%" width="100%"><tr><td><h1 >' 
+  + BlocklyGames.soy.titleSpan(opt_data, null, opt_ijData) + 
+  // ((opt_ijData.level) ? BlocklyGames.soy.levelLinks({suffix: '' + ((opt_data.levelLinkSuffix) ? soy.$$escapeHtml(opt_data.levelLinkSuffix) : '')}, null, opt_ijData) : '') +
+   '</h1></td><td id="header_cta" class="farSide">' + ((opt_data.hasLinkButton) ? '&nbsp;<button id="linkButton" title="Save and link to blocks."><img src="common/1x1.gif" class="link icon21"></button>' : '') + ((opt_data.hasHelpButton) ? '&nbsp;<button id="helpButton">Help</button>' : '') + ((opt_data.farLeftHtml) ? '&nbsp;' + soy.$$filterNoAutoescape(opt_data.farLeftHtml) : '') + '</td></tr></table>';
 };
 if (goog.DEBUG) {
   BlocklyGames.soy.headerBar.soyTemplateName = 'BlocklyGames.soy.headerBar';
@@ -66,7 +69,7 @@ if (goog.DEBUG) {
 
 
 BlocklyGames.soy.abortDialog = function(opt_data, opt_ignored, opt_ijData) {
-  return '<div id="dialogAbort" class="dialogHiddenContent">This level is extremely difficult. Would you like to skip it and go onto the next game? You can always come back later.<div class="farSide" style="padding: 1ex 3ex 0"><button id="abortCancel" class="dialogCancel"></button><button id="abortOk" class="secondary dialogOk"></button></div></div>';
+  return '<div id="dialogAbort" class="dialogHiddenContent">This level is extremely difficult. Would you like to skip it and go onto the next game? You can always come back later.<div class="farSide" style="padding: 1ex 3ex 0"><button id="abortCancel" class="dialogCancel">Cancel</button><button id="abortOk" class="secondary dialogOk"> OK</button></div></div>';
 };
 if (goog.DEBUG) {
   BlocklyGames.soy.abortDialog.soyTemplateName = 'BlocklyGames.soy.abortDialog';
@@ -82,7 +85,7 @@ if (goog.DEBUG) {
 
 
 BlocklyGames.soy.ok = function(opt_data, opt_ignored, opt_ijData) {
-  return '<div class="farSide" style="padding: 1ex 3ex 0"><button class="secondary dialogOk" onclick="BlocklyDialogs.hideDialog(true)"></button></div>';
+  return '<div class="farSide" style="padding: 1ex 3ex 0"><button class="secondary dialogOk" onclick="BlocklyDialogs.hideDialog(false)"></button></div>';
 };
 if (goog.DEBUG) {
   BlocklyGames.soy.ok.soyTemplateName = 'BlocklyGames.soy.ok';

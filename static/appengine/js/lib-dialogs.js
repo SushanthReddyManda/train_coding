@@ -439,7 +439,7 @@ BlocklyDialogs.congratulations = function() {
 BlocklyDialogs.dialogKeyDown_ = function(e) {
   if (BlocklyDialogs.isDialogVisible_) {
     if (e.keyCode == 13 || e.keyCode == 27 || e.keyCode == 32) {
-      BlocklyDialogs.hideDialog(true);
+      BlocklyDialogs.hideDialog(false);
       e.stopPropagation();
       e.preventDefault();
     }

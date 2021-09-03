@@ -6,5 +6,6 @@ app_name = 'database'
 urlpatterns = [
     path('update/', views.update),
     path('update2/', views.update2),
+    path('update3/', views.update3),
 ]
 
