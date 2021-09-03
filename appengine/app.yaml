@@ -12,7 +12,7 @@ handlers:
 
 # Index page.
 - url: /
-  static_files: index.html
+  static_files: Home.html
   upload: index\.html
   secure: always
 - url: /index/
