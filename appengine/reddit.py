@@ -1,4 +1,4 @@
-"""Blockly Games: Legacy Reddit to Turtle/Movie router.
+"""Technothlon Games: Legacy Reddit to Turtle/Movie router.
 
 Copyright 2014 Google LLC
 
@@ -15,7 +15,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 """
 
-"""Blockly Games used to use Reddit as a gallery.  These URLs still exist.
+"""Technothlon Games used to use Reddit as a gallery.  These URLs still exist.
 """
 
 __author__ = "fraser@google.com (Neil Fraser)"

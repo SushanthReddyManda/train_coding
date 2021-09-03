@@ -36,7 +36,7 @@
  * @author Aharon Lanin
  */
 
-// Blockly Games: Added provides.
+// Technothlon Games: Added provides.
 goog.provide('soy');
 goog.provide('soydata');
 
@@ -44,7 +44,7 @@ goog.provide('soydata');
 var goog = goog || {};
 
 
-// Blockly Games: Comment out goog.DEBUG def as it collides with base.js in
+// Technothlon Games: Comment out goog.DEBUG def as it collides with base.js in
 // uncompressed mode.
 // goog.DEBUG = false;
 
@@ -82,7 +82,7 @@ if (!goog.userAgent) {
     var isOpera = userAgent.indexOf('Opera') == 0;
     return {
       jscript: {
-        // Blockly Games: changed 'this' to 'window'.
+        // Technothlon Games: changed 'this' to 'window'.
         /**
          * @type {boolean}
          */

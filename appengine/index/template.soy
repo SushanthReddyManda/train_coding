@@ -15,7 +15,7 @@
  */
 {template .messages}
   <div style="display: none">
-    <span id="title">{msg meaning="Games.name" desc="IBID"}Blockly Games{/msg}</span>
+    <span id="title">{msg meaning="Games.name" desc="IBID"}Technothlon Games{/msg}</span>
     <span id="Index_clear">{msg meaning="Index.clear" desc="Confirmation prompt for deleting all the user's data."}Delete all your solutions?{/msg}</span>
   </div>
 {/template}
@@ -26,16 +26,16 @@
 {template .start}
   {call .messages /}
   <div id="header">
-    <img id="banner" src="index/title-beta.png" height="51" width="244" alt="Blockly Games">
+    <img id="banner" src="index/title-beta.png" height="51" width="244" alt="Technothlon Games">
     <div id="subtitle">
-      {msg meaning="Index.subTitle" desc="Brief description of Blockly Games."}Games for tomorrow's programmers.{/msg}
+      {msg meaning="Index.subTitle" desc="Brief description of Technothlon Games."}Games for tomorrow's programmers.{/msg}
       {sp}&nbsp;
       {if $ij.html}
         <a href="about.html?lang={$ij.lang}">
       {else}
         <a href="about?lang={$ij.lang}">
       {/if}
-        {msg meaning="Index.moreInfo" desc="Link to a description of Blockly Games, intended for parents and teachers."}Info for educators...{/msg}
+        {msg meaning="Index.moreInfo" desc="Link to a description of Technothlon Games, intended for parents and teachers."}Info for educators...{/msg}
       </a>
     </div>
   </div>
