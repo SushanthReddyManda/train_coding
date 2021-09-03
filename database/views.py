@@ -1,10 +1,13 @@
 from django.shortcuts import render
 import json
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import Score
 from datetime import datetime
-
+from openpyxl import load_workbook
+from io import BytesIO
+from .forms import *
+from django.contrib.auth.models import User
 
 def calculate_score(blocks_used):
     weightage = [0, 0, 0, 20, 20, 20, 20, 20]
@@ -92,3 +95,30 @@ def update3(request):
         return JsonResponse({'team': team})
     else:
         return JsonResponse({'team' : None})
+
+
+
+
+
+def create_user_dataset(request):
+    if request.method == 'POST':
+        form = SheetForm(request.POST, request.FILES)
+        if form.is_valid():
+            excel_data = request.FILES['file'].read()
+
+            wb = load_workbook(filename=BytesIO(excel_data))
+            sheet = wb.active
+            row_count = sheet.max_row
+            for i in range(row_count):
+                roll_no = sheet.cell(row=i+2, column=1).value
+                user_email = sheet.cell(row=i+2, column=2).value
+                user_password = sheet.cell(row=i+2, column=3).value
+                user = User.objects.create_user(username=roll_no, email=user_email, password=user_password)
+                user.first_name = sheet.cell(row=i+2, column=4).value
+                user.last_name = sheet.cell(row=i+2, column=5).value
+                user.save()
+                print(roll_no,user_email,user_password)
+            return HttpResponse("All users entry have been successfully completed.")
+    else:
+        form = SheetForm()
+    return render(request, 'sheet_upload.html', {'form': form})
