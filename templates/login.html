@@ -1,0 +1,9 @@
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        document.getElementById("login-form").onsubmit = function() {
+            localStorage.setItem('username', document.getElementById("id_username").value.toUpperCase());
+        };
+    });
+</script>
+
+{% extends "admin/login.html" %}
