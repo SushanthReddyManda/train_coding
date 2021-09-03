@@ -35,6 +35,7 @@ Movie.answer = function(f) {
       Movie.line(40, 50, 20, 70, 5);
       Movie.line(60, 50, 80, 70, 5);
       break;
+
     case 2:
       // Right hand moving up.
       Movie.penColour('#ff0000');
@@ -45,76 +46,11 @@ Movie.answer = function(f) {
       Movie.line(40, 50, 20, 70, 5);
       Movie.line(60, 50, 80, time(), 5);
       break;
+
     case 3:
-      // Left hand moving down.
-      Movie.penColour('#ff0000');
-      Movie.circle(50, 70, 10);
-      Movie.penColour('#3333ff');
-      Movie.rect(50, 40, 20, 40);
-      Movie.penColour('#000000');
-      Movie.line(40, 50, 20, 100 - time(), 5);
-      Movie.line(60, 50, 80, time(), 5);
-      break;
-    case 4:
-      // Legs cross.
-      Movie.penColour('#ff0000');
-      Movie.circle(50, 70, 10);
-      Movie.penColour('#3333ff');
-      Movie.rect(50, 40, 20, 40);
-      Movie.penColour('#000000');
-      Movie.line(40, 50, 20, 100 - time(), 5);
-      Movie.line(60, 50, 80, time(), 5);
-      Movie.line(40, 20, time(), 0, 5);
-      Movie.line(60, 20, 100 - time(), 0, 5);
-      break;
-    case 5:
-      // Right arm parabola.
-      Movie.penColour('#ff0000');
-      Movie.circle(50, 70, 10);
-      Movie.penColour('#3333ff');
-      Movie.rect(50, 40, 20, 40);
-      Movie.penColour('#000000');
-      Movie.line(40, 50, 20, 100 - time(), 5);
-      Movie.line(60, 50, 80, Math.pow((time() - 50) / 5, 2), 5);
-      Movie.line(40, 20, time(), 0, 5);
-      Movie.line(60, 20, 100 - time(), 0, 5);
-      break;
-    case 6:
-      // Hands.
-      Movie.penColour('#ff0000');
-      Movie.circle(50, 70, 10);
-      Movie.penColour('#3333ff');
-      Movie.rect(50, 40, 20, 40);
-      Movie.penColour('#000000');
-      Movie.line(40, 50, 20, 100 - time(), 5);
-      Movie.line(60, 50, 80, Math.pow((time() - 50) / 5, 2), 5);
-      Movie.line(40, 20, time(), 0, 5);
-      Movie.line(60, 20, 100 - time(), 0, 5);
-      Movie.penColour('#ff0000');
-      Movie.circle(20, 100 - time(), 5);
-      Movie.circle(80, Math.pow((time() - 50) / 5, 2), 5);
-      break;
-    case 7:
-      // Head.
-      Movie.penColour('#ff0000');
-      if (time() < 50) {
-        Movie.circle(50, 70, 10);
-      } else {
-        Movie.circle(50, 80, 20);
-      }
-      Movie.penColour('#3333ff');
-      Movie.rect(50, 40, 20, 40);
-      Movie.penColour('#000000');
-      Movie.line(40, 50, 20, 100 - time(), 5);
-      Movie.line(60, 50, 80, Math.pow((time() - 50) / 5, 2), 5);
-      Movie.line(40, 20, time(), 0, 5);
-      Movie.line(60, 20, 100 - time(), 0, 5);
-      Movie.penColour('#ff0000');
-      Movie.circle(20, 100 - time(), 5);
-      Movie.circle(80, Math.pow((time() - 50) / 5, 2), 5);
-      break;
-    case 8:
-      // Legs reverse.
+      // Background.
+      Movie.penColour('#00ff00');
+      Movie.circle(50, time() / 2, time() / 2);
       Movie.penColour('#ff0000');
       if (time() < 50) {
         Movie.circle(50, 70, 10);
@@ -136,6 +72,34 @@ Movie.answer = function(f) {
       Movie.penColour('#ff0000');
       Movie.circle(20, 100 - time(), 5);
       Movie.circle(80, Math.pow((time() - 50) / 5, 2), 5);
+      break;
+      
+      
+    case 4:
+        // Reflection
+        
+      Movie.penColour('#ADD8E6');
+      Movie.rect(50, 25, 100, 50);
+      Movie.penColour('');
+      Movie.line(50, 0, 50, 100, 1);
+      Movie.penColour('#000000');
+      Movie.line(0, 50, 100, 50, 1);
+      Movie.penColour('#FFFF00');
+      Movie.line(0, 100, 50, 50, 1);
+      Movie.line(50, 50, 100, 100, 1);
+      Movie.line(50, 50, 75, 0, 1);
+      Movie.penColour('#ff0000');
+      
+      if (time() < 50) {
+      Movie.circle(time(), 100 - time(), 1);
+      
+      }
+      else {
+        Movie.circle(0+ time(), 0+ time(), 1);
+        Movie.circle( ((time()-50)/2)+50 , 100- time(), 1);
+        
+      }
+
       break;
     case 9:
       // Background.
