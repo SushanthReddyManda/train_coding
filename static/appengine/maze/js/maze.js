@@ -1093,7 +1093,7 @@ Maze.execute = function() {
     console.log('Map:', BlocklyGames.LEVEL);
     console.log('Blocks Used:', BlocklyInterface.workspace.getAllBlocks().length);
 
-    var payload = {'team': username,
+    var payload = {
                     'map': BlocklyGames.LEVEL,
                     'blocks': BlocklyInterface.workspace.getAllBlocks().length,
                     'code': BlocklyInterface.stripCode(code)};

@@ -51,7 +51,7 @@ class User(AbstractUser):
 
 class Score(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
-    team = models.CharField(max_length=200)
+    # team = models.CharField(max_length=200)
     blocks = IntegerListField(max_length=200, default=[-1]*(NUM_OF_LEVELS+1))
     codes = CharListField(default=['']*(NUM_OF_LEVELS+1))
     score = models.DecimalField(default=0, decimal_places=3, max_digits=10)
@@ -66,4 +66,4 @@ class Score(models.Model):
     time3 = models.DateTimeField(default=datetime.now)
 
     def __str__(self):
-        return self.team + ': [' + ', '.join(map(str, self.blocks[1:])) + ']'
+        return self.user.username

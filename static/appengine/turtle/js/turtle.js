@@ -840,7 +840,7 @@ Turtle.checkAnswer = function() {
     console.log('Map:', BlocklyGames.LEVEL);
     // console.log('Blocks Used:', BlocklyInterface.workspace.getAllBlocks().length);
 
-    var payload = {'team': username,
+    var payload = {
                     'level': BlocklyGames.LEVEL,
                     'code': BlocklyInterface.stripCode(BlocklyInterface.executedJsCode)};
 

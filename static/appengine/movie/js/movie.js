@@ -579,7 +579,7 @@ Movie.checkAnswers = function() {
   if (Movie.isCorrect() && !Movie.success) {
     Movie.success = true;
 
-    var payload = {'team': username,
+    var payload = {
                     'level': BlocklyGames.LEVEL,
                     'code': BlocklyInterface.stripCode(BlocklyInterface.executedJsCode)};
 
