@@ -27,7 +27,7 @@
         font-size: 23px;
     }
     
-    #id_username {
+    #roll_no {
     width: 76%;
     color: rgb(38, 50, 56);
     font-weight: 700;
@@ -51,7 +51,7 @@
         padding-top: 40px;
     }
     
-    #id_password {
+    #password {
             width: 76%;
     color: rgb(38, 50, 56);
     font-weight: 700;
@@ -72,7 +72,7 @@
     }
     
    
-    #id_username:focus, #id_password:focus {
+    #roll_no:focus, #password:focus {
         border: 2px solid rgba(0, 0, 0, 0.18) !important;
         
     }
@@ -118,12 +118,12 @@
     <form method="post"  enctype="multipart/form-data">
         {% csrf_token %}
         <p>
-        <input type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" placeholder="Username" id="id_username">
+        <input type="text" name="roll_no" autofocus="" autocapitalize="none" maxlength="150" required="" placeholder="Enter Roll Number" id="roll_no">
         </p>
         <p>
-            <input type="password" name="password" autocomplete="current-password" required="" placeholder="Password"id="id_password">
+        <input type="password" name="password" autocomplete="current-password" required="" placeholder="Password" id="password">
         </p>
-        <button class="submit" align="center" type="submit">Send</button>
+        <button class="submit" align="center" type="submit">Log  In</button>
     </form>        
     </div>
 </body>

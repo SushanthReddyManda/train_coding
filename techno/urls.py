@@ -18,8 +18,11 @@ from django.urls import path, include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib.auth.views import LoginView
 
+from database import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('database/', include('database.urls')),
-] + staticfiles_urlpatterns()+[path('', LoginView.as_view(template_name='login.html', redirect_field_name='/static/index.html')),]
-
+    path("", views.techo_login, name='login'),
+    path('logout/', views.logout_view, name='logout'),
+] + staticfiles_urlpatterns()
