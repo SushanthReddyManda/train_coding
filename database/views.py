@@ -28,7 +28,8 @@ def calculate_score(blocks_used):
 def update(request):
 
     if request.user.is_authenticated:
-        payload = json.loads(request.body)
+        body_unicode = request.body.decode('utf-8')
+        payload = json.loads(body_unicode)
         map_variable = payload['map']
         blocks = payload['blocks']
         code = payload['code']
@@ -52,7 +53,8 @@ def update(request):
 def update2(request):
 
     if request.user.is_authenticated:
-        payload = json.loads(request.body)
+        body_unicode = request.body.decode('utf-8')
+        payload = json.loads(body_unicode)
         level = payload['level']
         code = payload['code']
 
@@ -76,7 +78,8 @@ def update2(request):
 def update3(request):
 
     if request.user.is_authenticated:
-        payload = json.loads(request.body)
+        body_unicode = request.body.decode('utf-8')
+        payload = json.loads(body_unicode)
         level = payload['level']
         code = payload['code']
 
@@ -122,7 +125,7 @@ def create_user_dataset(request):
 
 def techo_login(request):
     if request.user.is_authenticated:
-        return redirect(request.GET.get('next', '/static/index.html'))
+        return redirect(request.GET.get('next', '/static/appengine/index.html'))
 
     if request.method == "POST":
         technouser = User.objects.filter(roll_no=request.POST['roll_no']).first()
@@ -134,7 +137,7 @@ def techo_login(request):
         if user is not None:
             login(request, user)
             print("Used logged in!")
-            return redirect(request.GET.get('next', '/static/index.html'))
+            return redirect(request.GET.get('next', '/static/appengine/index.html'))
         else:
             return render(request, 'login.html', {"messages": [["text-danger", "Invalid Credentials."]]})
     return render(request, 'login.html', )

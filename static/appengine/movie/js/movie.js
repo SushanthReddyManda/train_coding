@@ -10,7 +10,7 @@
  */
 'use strict';
 
-URL = "http://localhost:8000"
+URL = "http://codeofiesta.techniche.org"
 
 goog.provide('Movie');
 
