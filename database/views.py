@@ -36,7 +36,7 @@ def update(request):
         code = payload['code']
 
         instance = Score.objects.get_or_create(team=team)[0]
-
+        instance.user = request.user
         if (instance.blocks[map_variable] > blocks) or (instance.blocks[map_variable] == -1):
             instance.blocks[map_variable] = blocks
             instance.codes[map_variable] = code
@@ -61,7 +61,7 @@ def update2(request):
         code = payload['code']
 
         instance = Score.objects.get_or_create(team=team)[0]
-
+        instance.user = request.user
         if instance.turtle[level] != 1:
             instance.turtle[level] = 1
             instance.turtle_codes[level] = code
@@ -87,14 +87,12 @@ def update3(request):
         code = payload['code']
 
         instance = Score.objects.get_or_create(team=team)[0]
-
+        instance.user = request.user
         if instance.movie[level] != 1:
             instance.movie[level] = 1
             instance.movie_codes[level] = code
             instance.time3 = datetime.now()
-
             instance.save()
-
         return JsonResponse({'team': team})
     else:
         return JsonResponse({'team' : None})
